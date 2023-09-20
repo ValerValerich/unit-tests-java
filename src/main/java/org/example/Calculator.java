@@ -38,6 +38,7 @@ public class Calculator {
     // HW1.1: Придумайте и опишите (можно в псевдокоде) функцию извлечения корня и
     // необходимые проверки для него используя граничные случаи
     public static double squareRootExtraction(double num) {
+
         //  0
         //  Отрицательные числа
         //  Дробные значения корней
@@ -51,10 +52,13 @@ public class Calculator {
     // Нужно написать в калькуляторе метод вычисления суммы покупки со скидкой и проверить его, используя AssertJ
     // Примерная сигнатура и тело метода:
     public static double calculatingDiscount(double purchaseAmount, int discountAmount) {
-        Assertions.assertThat(purchaseAmount).isInstanceOf(Double.class);
+        if (purchaseAmount<0 || discountAmount <0 || discountAmount>100){
+            throw new ArithmeticException ("ArithmeticException");
+        }
+        return purchaseAmount - purchaseAmount*discountAmount/100;
         // purchaseAmount - сумма покупки
         // discountAmount - размер скидки
         // Метод должен возвращать сумму покупки со скидкой
-        return purchaseAmount - purchaseAmount/100*discountAmount;
+
     }
 }

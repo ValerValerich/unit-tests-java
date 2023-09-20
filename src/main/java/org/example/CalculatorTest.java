@@ -3,19 +3,24 @@ package org.example;
 import org.assertj.core.api.Assertions;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.example.Calculator.squareRootExtraction;
 
 public class CalculatorTest {
     public static void main(String[] args) {
 
 
-        //assertThat(Calculator.calculatingDiscount(-100, 10)).isEqualTo(90);
-        System.out.println(Calculator.calculatingDiscount(100, 10));
-        try {
-            Assertions.assertThat(100).isInstanceOf(Double.class);
-        }
-        catch (ArithmeticException e){
-            System.out.println(e.getMessage());
-        }
+        //Assertions.assertThat(Calculator.calculatingDiscount(100, 20)).isEqualTo(80);
+        //Assertions.assertThat(Calculator.calculatingDiscount(-100, 20)).isEqualTo(80);
+        //Assertions.assertThat(Calculator.calculatingDiscount(100, -20)).isEqualTo(80);
+        //Assertions.assertThat(Calculator.calculatingDiscount(100, 200)).isEqualTo(80);
+
+
+        //System.out.println(squareRootExtraction(9));
+        //Assertions.assertThat(squareRootExtraction(0)).isEqualTo(0);
+        //Assertions.assertThat(squareRootExtraction(-1)).isInstanceOf(IllegalArgumentException.class);
+        //Assertions.assertThatThrownBy(() -> squareRootExtraction(-3)).isInstanceOf(AssertionError.class);
+
+
         // Проверка базового функционала с целыми числами:
         if (8 != Calculator.calculation(2, 6, '+')) {
             throw new AssertionError("Ошибка в методе");
